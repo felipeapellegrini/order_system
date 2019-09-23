@@ -22,7 +22,7 @@ namespace Order
             DateTime birthDate = DateTime.Parse(Console.ReadLine());
             Console.WriteLine("Enter order data: ");
             Console.Write("Status: ");
-            OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
+            OrderStatus status = (OrderStatus) Enum.Parse(typeof(OrderStatus), Console.ReadLine(), true);
 
             Client client = new Client(clientName, email, birthDate);
             Order1 order = new Order1(DateTime.Now, status, client);
@@ -44,7 +44,7 @@ namespace Order
                 int prdQuantity = int.Parse(Console.ReadLine());
 
                 OrderItem orderItem = new OrderItem(prdQuantity, prdPrice, product);
-
+                order.AddItem(orderItem);
                 
 
             }

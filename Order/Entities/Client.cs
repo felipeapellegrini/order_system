@@ -22,7 +22,7 @@ namespace Order.Entities
 
         public override string ToString()
         {
-            return Name + " (" + BirthDate + ") - " + Email;
+            return Name + " (" + BirthDate.ToShortDateString() + ") - " + Email;
         }
 
     }
